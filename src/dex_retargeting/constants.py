@@ -29,6 +29,8 @@ class RobotName(enum.Enum):
     ability = enum.auto()
     inspire = enum.auto()
     panda = enum.auto()
+    bhand = enum.auto()
+    tesollo = enum.auto()
 
 
 class RetargetingType(enum.Enum):
@@ -52,6 +54,8 @@ ROBOT_NAME_MAP = {
     RobotName.ability: "ability_hand",
     RobotName.inspire: "inspire_hand",
     RobotName.panda: "panda_gripper",
+    RobotName.bhand: "barrett_hand",
+    RobotName.tesollo: "tesollo_gripper_3f"
 }
 
 ROBOT_NAMES = list(ROBOT_NAME_MAP.keys())
@@ -68,11 +72,11 @@ def get_default_config_path(
 
     robot_name_str = ROBOT_NAME_MAP[robot_name]
     hand_type_str = hand_type.name
-    if "gripper" in robot_name_str:  # For gripper robots, only use gripper config file.
+    if "gripper" in robot_name_str:
         if retargeting_type == RetargetingType.dexpilot:
-            config_name = f"{robot_name_str}_dexpilot.yml"
+            config_name = f"{robot_name_str}_{hand_type_str}_dexpilot.yml"
         else:
-            config_name = f"{robot_name_str}.yml"
+            config_name = f"{robot_name_str}_{hand_type_str}.yml"
     else:
         if retargeting_type == RetargetingType.dexpilot:
             config_name = f"{robot_name_str}_{hand_type_str}_dexpilot.yml"

@@ -1,0 +1,3 @@
+cd example/vector_retargeting/
+
+python3 show_realtime_retargeting.py   --robot-name tesollo   --retargeting-type dexpilot   --hand-type right

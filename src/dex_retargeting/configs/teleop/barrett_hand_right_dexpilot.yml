@@ -1,0 +1,20 @@
+retargeting:
+  type: DexPilot
+  # 1. 修改为你自己的URDF文件名
+  urdf_path: barrett_hand/bhand_model.urdf
+
+  # 2. 修改为你的URDF中实际的关节名称 (非常重要!)
+  #    你需要打开URDF文件，找到驱动手指运动的<joint>标签的name
+  #target_joint_names: [ 'finger_1_dist_joint', 'finger_2_dist_joint', 'finger_3_dist_joint' ]
+
+  # 3. 修改为你的URDF中手腕或基座的<link>标签的name
+  wrist_link_name: "base_link"
+
+  # 4. 修改为你的URDF中所有指尖<link>标签的name
+  finger_tip_link_names: [ "finger_1_dist_link", "finger_2_dist_link", "finger_3_dist_link" ]
+
+  # 人手和机械手之间的尺寸比例，通常保持1.0即可
+  scaling_factor: 1.0
+
+  # 低通滤波参数，用于平滑运动，可以暂时不改
+  low_pass_alpha: 0.2

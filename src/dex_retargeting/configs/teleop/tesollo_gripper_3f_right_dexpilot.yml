@@ -1,0 +1,15 @@
+retargeting:
+  type: DexPilot
+  urdf_path: tesollo_gripper_3f/delto_gripper_3f.urdf
+
+  wrist_link_name: delto_base_link
+
+  finger_tip_link_names:
+    - F1_TIP      # 对应机器人第一根手指末端
+    - F2_TIP      # 对应机器人第二根手指末端
+    - F3_TIP      # 对应机器人第三根手指末端
+
+
+
+  scaling_factor: 1.0
+  low_pass_alpha: 0.2
