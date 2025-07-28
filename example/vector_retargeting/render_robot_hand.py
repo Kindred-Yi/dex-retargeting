@@ -92,6 +92,8 @@ def render_by_sapien(
         loader.scale = 0.9
     elif "bhand" in robot_name:
         loader.scale = 1.5
+    elif "tesollo" in robot_name:
+        loader.scale = 1.5
     elif "leap" in robot_name:
         loader.scale = 1.4
     elif "svh" in robot_name:
@@ -112,6 +114,8 @@ def render_by_sapien(
     elif "allegro" in robot_name:
         robot.set_pose(sapien.Pose([0, 0, -0.05]))
     elif "bhand" in robot_name:
+        robot.set_pose(sapien.Pose([0, 0, -0.2]))
+    elif "tesollo" in robot_name:
         robot.set_pose(sapien.Pose([0, 0, -0.2]))
     elif "leap" in robot_name:
         robot.set_pose(sapien.Pose([0, 0, -0.15]))
